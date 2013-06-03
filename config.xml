@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns		= "http://www.w3.org/ns/widgets"
-	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.phonegap.getting.started"
-	version 	= "0.0.1">
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.rvikander.mtgcount"
+        versionCode="10" 
+        version   = "1.0.0">
 
-	<name>MTG Draft Mana Helper</name>
+    <name>MTG Draft Mana Helper</name>
 
 	<description>
 		App to help calculate the mana totals.
@@ -19,5 +20,6 @@
 	<icon src="assets/images/logo.png" default="true" />
     
 	<preference name="permissions" value="none"/>
-	<preference name="phonegap-version" value="2.0.0" />
+	<preference name="phonegap-version" value="2.7.0" />
+
 </widget>
