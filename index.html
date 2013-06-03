@@ -21,23 +21,24 @@
 					divPage = $("#page"),
 					colors = $("#total_colors").val(),
 					totalLands = $("#total_lands").val(),
-					calculateBtn = $("#calculateBtn");
+					calculateBtn = $("#calculateBtn"),
+					colorSelect;
 
 				colorRow.children().remove();
 
+
 				for (i; i <= colors; i++) {
-					labelField = "<label for='color_" + i + "'># of Color Symbols</label>";
-					//field = "<input type='text' name='color_" + i + "' id='color_" + i + "' />";
-					field = '<input type="range" name="color_' + i + '" id="color_' + i + '" value="0" min="0" max="' + totalLands + '" step="1" />';
-					newRow = "<div data-role='fieldcontain' class='ui-show-label'>" + labelField + field + "</div>"
+					colorSelect = "<select name='color_" + i + "' id='color_" + i + "'><option value=''></option><option value='Black'>Black</option><option value='Blue'>Blue</option><option value='Green'>Green</option><option value='Red'>Red</option><option value='White'>White</option></select>";
+					colorLabel = "<label for='color_" + i + "'>Color: </label> " + colorSelect;
+					fieldLabel = "<label for='color_amount_" + i + "'># of Symbols: </label> ";
+					field = '<input type="range" name="color_amount_' + i + '" id="color_amount_' + i + '" value="0" min="0" max="' + totalLands + '" step="1" />';
+					newRow = "<div data-role='fieldcontain' class='ui-show-label'>" + colorLabel + fieldLabel + field + "</div><br />"
 					colorRow.append(newRow)
 				}
 
 				colorRow.trigger("create");
 
 				calculateBtn.show();
-
-				//divPage.page();
 			}
 
 			function calculateColors () {
@@ -51,20 +52,20 @@
 				resultsRow.children().remove();
 
 				for (i; i <= colors; i++) {
-					color_value = parseInt($("#color_"+i).val());
+					color_value = parseInt($("#color_amount_"+i).val());
 					totalColors = totalColors + color_value;
 				}
 
 				i = 1;
 
 				for (i; i <= colors; i++) {
-					color_value = parseInt($("#color_"+i).val());
+					color_value = parseInt($("#color_amount_"+i).val());
 					if(i != 1){
 						value = Math.ceil((color_value / totalColors) * totalLands);
 					} else {
 						value = parseInt((color_value / totalColors) * totalLands);
 					}
-					results.append("<li><b><h2>Color " + i + "</b>: " + value + "</h2></li>");
+					results.append("<li><b><h2>" + $("#color_"+i).val() + "</b>: " + value + "</h2></li>");
 				}
 
 				resultsRow.append(results).trigger("create");
