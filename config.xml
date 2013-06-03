@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns		= "http://www.w3.org/ns/widgets"
+	xmlns:gap	= "http://phonegap.com/ns/1.0"
+	id		= "com.phonegap.getting.started"
+	version 	= "0.0.1">
+
+	<name>MTG Draft Mana Helper</name>
+
+	<description>
+		App to help calculate the mana totals.
+	</description>
+
+	<author href="http://blog.ryanvikander.com"
+		email="rvikander@imagetrend.com">
+		Ryan Vikander
+	</author>
+	
+	<icon src="assets/images/logo.png" gap:role="default" />
+	<icon src="assets/images/logo.png" default="true" />
+    
+	<preference name="permissions" value="none"/>
+	<preference name="phonegap-version" value="2.0.0" />
+</widget>
